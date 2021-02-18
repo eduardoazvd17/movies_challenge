@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:the_movie_challenge/app/modules/home/infra/http/dio/genre_repository.dart';
-import 'package:the_movie_challenge/app/shared/infra/http/dio/movies_repository.dart';
+import 'package:the_movie_challenge/app/modules/home/repositories/genre_repository.dart';
 
-import 'stores/home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:the_movie_challenge/app/modules/home/views/home_page.dart';
+import 'package:the_movie_challenge/app/shared/repositories/movies_repository.dart';
 
-import 'pages/home_page.dart';
+import 'controllers/home_controller.dart';
 
 class HomeModule extends ChildModule {
   @override

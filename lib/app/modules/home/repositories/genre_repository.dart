@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:the_movie_challenge/app/modules/home/repositories/interface_genre_repository.dart';
 
-import 'package:the_movie_challenge/app/shared/constants/api_key.dart';
 import 'package:the_movie_challenge/app/shared/models/genre_model.dart';
+import 'package:the_movie_challenge/app/shared/utils/api_key.dart';
 
 class GenreRepository implements IGenreRepository {
   final Dio _dio;

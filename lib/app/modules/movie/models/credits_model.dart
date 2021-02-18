@@ -9,13 +9,13 @@ class CreditsModel {
 
   CreditsModel.fromJson(Map<String, dynamic> json) {
     if (json['cast'] != null) {
-      cast = new List<CastModel>();
+      cast = new List.empty();
       json['cast'].forEach((v) {
         cast.add(new CastModel.fromJson(v));
       });
     }
     if (json['crew'] != null) {
-      crew = new List<CrewModel>();
+      crew = new List.empty();
       json['crew'].forEach((v) {
         crew.add(new CrewModel.fromJson(v));
       });

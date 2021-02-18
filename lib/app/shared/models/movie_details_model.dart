@@ -39,13 +39,13 @@ class MovieDetailsModel {
     runtime = json['runtime'];
     budget = json['budget'];
     if (json['genres'] != null) {
-      genres = new List<GenreModel>();
+      genres = new List.empty();
       json['genres'].forEach((v) {
         genres.add(new GenreModel.fromJSON(v));
       });
     }
     if (json['production_companies'] != null) {
-      productionCompanies = new List<ProductionCompanyModel>();
+      productionCompanies = new List.empty();
       json['production_companies'].forEach((v) {
         productionCompanies.add(new ProductionCompanyModel.fromJson(v));
       });

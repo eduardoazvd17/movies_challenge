@@ -1,9 +1,8 @@
-import 'package:the_movie_challenge/app/shared/infra/http/dio/movies_repository.dart';
+import 'package:the_movie_challenge/app/modules/movie/controllers/movie_controller.dart';
 
-import 'stores/movie_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'pages/movie_page.dart';
+import 'package:the_movie_challenge/app/modules/movie/views/movie_page.dart';
+import 'package:the_movie_challenge/app/shared/repositories/movies_repository.dart';
 
 class MovieModule extends ChildModule {
   @override

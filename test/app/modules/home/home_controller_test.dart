@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:the_movie_challenge/app/modules/home/stores/home_controller.dart';
 import 'package:the_movie_challenge/app/modules/home/home_module.dart';
 
 void main() {
