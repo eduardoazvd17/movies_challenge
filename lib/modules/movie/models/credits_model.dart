@@ -1,5 +1,5 @@
-import 'package:the_movie_challenge/app/modules/movie/models/cast_model.dart';
-import 'package:the_movie_challenge/app/modules/movie/models/crew_model.dart';
+import 'cast_model.dart';
+import 'crew_model.dart';
 
 class CreditsModel {
   List<CastModel> cast = [];

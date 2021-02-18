@@ -2,13 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'package:the_movie_challenge/app/modules/home/repositories/interface_genre_repository.dart';
-import 'package:the_movie_challenge/app/shared/repositories/interface_movies_repository.dart';
-
-import 'package:the_movie_challenge/app/shared/models/movie_model.dart';
-import 'package:the_movie_challenge/app/shared/models/genre_model.dart';
-
+import 'package:the_movie_challenge/modules/application/models/genre_model.dart';
+import 'package:the_movie_challenge/modules/application/models/movie_model.dart';
+import 'package:the_movie_challenge/modules/application/repositories/interface_movies_repository.dart';
+import 'package:the_movie_challenge/modules/home/repositories/interface_genre_repository.dart';
 part 'home_controller.g.dart';
 
 @Injectable()

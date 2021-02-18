@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:the_movie_challenge/app/modules/home/repositories/genre_repository.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:the_movie_challenge/app/modules/home/views/home_page.dart';
-import 'package:the_movie_challenge/app/shared/repositories/movies_repository.dart';
-
+import 'package:the_movie_challenge/modules/application/repositories/movies_repository.dart';
+import 'package:the_movie_challenge/modules/home/repositories/genre_repository.dart';
+import 'package:the_movie_challenge/modules/home/views/home_page.dart';
 import 'controllers/home_controller.dart';
 
 class HomeModule extends ChildModule {
