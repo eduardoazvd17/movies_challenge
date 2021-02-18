@@ -3,8 +3,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:the_movie_challenge/modules/application/models/movie_details_model.dart';
 import 'package:the_movie_challenge/modules/application/models/production_company_model.dart';
 import 'package:the_movie_challenge/modules/application/repositories/interface_movies_repository.dart';
-import 'package:the_movie_challenge/modules/movie/models/cast_model.dart';
-import 'package:the_movie_challenge/modules/movie/models/crew_model.dart';
+import 'package:the_movie_challenge/modules/movie_page/models/cast_model.dart';
+import 'package:the_movie_challenge/modules/movie_page/models/crew_model.dart';
 
 part 'movie_controller.g.dart';
 

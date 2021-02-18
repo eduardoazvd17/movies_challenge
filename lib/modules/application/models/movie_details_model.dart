@@ -1,5 +1,5 @@
 import 'package:the_movie_challenge/modules/application/models/production_company_model.dart';
-import 'package:the_movie_challenge/modules/movie/models/credits_model.dart';
+import 'package:the_movie_challenge/modules/movie_page/models/credits_model.dart';
 
 import 'genre_model.dart';
 

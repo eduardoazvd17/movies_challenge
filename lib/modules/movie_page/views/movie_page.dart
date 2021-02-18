@@ -3,10 +3,10 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:the_movie_challenge/modules/application/models/genre_model.dart';
-import 'package:the_movie_challenge/modules/movie/controllers/movie_controller.dart';
-import 'package:the_movie_challenge/modules/movie/views/skeleton_movie_page.dart';
-import 'package:the_movie_challenge/modules/movie/widgets/genre_movie_item.dart';
-import 'package:the_movie_challenge/modules/movie/widgets/gray_tag_widget.dart';
+import 'package:the_movie_challenge/modules/movie_page/controllers/movie_controller.dart';
+import 'package:the_movie_challenge/modules/movie_page/views/skeleton_movie_page.dart';
+import 'package:the_movie_challenge/modules/movie_page/widgets/genre_movie_item.dart';
+import 'package:the_movie_challenge/modules/movie_page/widgets/gray_tag_widget.dart';
 
 class MoviePage extends StatefulWidget {
   final String title;

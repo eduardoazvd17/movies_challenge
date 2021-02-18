@@ -5,7 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:the_movie_challenge/modules/application/models/genre_model.dart';
 import 'package:the_movie_challenge/modules/application/models/movie_model.dart';
 import 'package:the_movie_challenge/modules/application/repositories/interface_movies_repository.dart';
-import 'package:the_movie_challenge/modules/home/repositories/interface_genre_repository.dart';
+import 'package:the_movie_challenge/modules/home_page/repositories/interface_genre_repository.dart';
 part 'home_controller.g.dart';
 
 @Injectable()
