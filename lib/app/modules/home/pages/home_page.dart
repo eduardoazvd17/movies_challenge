@@ -217,7 +217,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           ),
         ),
         color: Color.fromRGBO(241, 243, 245, 1),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Stack(
         children: [
@@ -228,8 +228,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               width: size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(15),
+                  bottomLeft: Radius.circular(15),
                 ),
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
