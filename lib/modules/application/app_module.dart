@@ -1,13 +1,13 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:the_movie_challenge/app/modules/movie/movie_module.dart';
-import 'package:the_movie_challenge/app/shared/repositories/movies_repository.dart';
-import 'package:the_movie_challenge/app/shared/utils/base_url.dart';
+import 'package:the_movie_challenge/modules/application/repositories/movies_repository.dart';
+import 'package:the_movie_challenge/modules/application/utils/base_url.dart';
+import 'package:the_movie_challenge/modules/home/home_module.dart';
+import 'package:the_movie_challenge/modules/movie/movie_module.dart';
 
 import './app_widget.dart';
 import './app_controller.dart';
-import './modules/home/home_module.dart';
 
 class AppModule extends MainModule {
   @override

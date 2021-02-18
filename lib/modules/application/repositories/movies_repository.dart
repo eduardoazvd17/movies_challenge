@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:the_movie_challenge/app/shared/models/movie_details_model.dart';
-import 'package:the_movie_challenge/app/shared/repositories/interface_movies_repository.dart';
-
-import 'package:the_movie_challenge/app/shared/models/movie_model.dart';
-import 'package:the_movie_challenge/app/shared/utils/api_key.dart';
+import 'package:the_movie_challenge/modules/application/models/movie_details_model.dart';
+import 'package:the_movie_challenge/modules/application/models/movie_model.dart';
+import 'package:the_movie_challenge/modules/application/repositories/interface_movies_repository.dart';
+import 'package:the_movie_challenge/modules/application/utils/api_key.dart';
 
 class MovieRepository implements IMoviesRepository {
   final Dio _dio;

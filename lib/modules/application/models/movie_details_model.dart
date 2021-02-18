@@ -1,6 +1,7 @@
-import 'package:the_movie_challenge/app/modules/movie/models/credits_model.dart';
-import 'package:the_movie_challenge/app/shared/models/production_company_model.dart';
-import 'package:the_movie_challenge/app/shared/models/genre_model.dart';
+import 'package:the_movie_challenge/modules/application/models/production_company_model.dart';
+import 'package:the_movie_challenge/modules/movie/models/credits_model.dart';
+
+import 'genre_model.dart';
 
 class MovieDetailsModel {
   String title = "";
