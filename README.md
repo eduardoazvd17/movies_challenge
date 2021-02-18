@@ -1,16 +1,11 @@
-# movies_chalenge
+# Movies Chalenge
 
-A new Flutter project.
+Application proposed by the company Cubos Tecnologia as a technical test, with the objective of building a mobile application that lists films and their respective information from an API.
 
-## Getting Started
+## Screens
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div align="center">
+	<img width="200" height="400" src="./screenshots/first.png" alt="Home"/><span style="padding-left:2px"></span>
+    <img width="200" height="400" src="./screenshots/second.png" alt="Movie"/><span style="padding-left:2px"></span>
+    <img width="200" height="400" src="./screenshots/third.png" alt="Movie"/>
+</div>
