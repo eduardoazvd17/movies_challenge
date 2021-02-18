@@ -1,6 +1,6 @@
 # Movies Chalenge
 
-Application proposed by the company Cubos Tecnologia as a technical test, with the objective of building a mobile application that lists films and their respective information from an API.
+Movies info application using rest api, a challenge proposed by Cubos.
 
 ## Screens
 
