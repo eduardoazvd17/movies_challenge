@@ -7,21 +7,23 @@ class SkeletonMoviePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: size.height,
-          width: size.width,
-          child: Shimmer.fromColors(
-            baseColor: Colors.grey[300],
-            highlightColor: Colors.grey[100],
-            child: Column(
-              children: [
-                movieImage(),
-                rating(),
-                title(),
-                informations(),
-                genre(),
-              ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            height: size.height,
+            width: size.width,
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey[300],
+              highlightColor: Colors.grey[100],
+              child: Column(
+                children: [
+                  movieImage(),
+                  rating(),
+                  title(),
+                  informations(),
+                  genre(),
+                ],
+              ),
             ),
           ),
         ),

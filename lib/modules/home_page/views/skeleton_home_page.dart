@@ -7,30 +7,32 @@ class SkeletonHomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
+      body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(
-            left: 20,
-            right: 20,
-            top: 48,
-          ),
-          child: Shimmer.fromColors(
-            baseColor: Colors.grey[300],
-            highlightColor: Colors.grey[100],
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                title(Colors.grey),
-                Padding(
-                  padding: EdgeInsets.only(top: 24, bottom: 16),
-                  child: searchBar(Colors.grey),
-                ),
-                listOfCategorie(Colors.grey),
-                SizedBox(height: 20),
-                listOfMovies(Colors.grey),
-              ],
+          height: size.height,
+          width: size.width,
+          child: Container(
+            padding: EdgeInsets.only(
+              left: 20,
+              right: 20,
+              top: 48,
+            ),
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey[300],
+              highlightColor: Colors.grey[100],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  title(Colors.grey),
+                  Padding(
+                    padding: EdgeInsets.only(top: 24, bottom: 16),
+                    child: searchBar(Colors.grey),
+                  ),
+                  listOfCategorie(Colors.grey),
+                  SizedBox(height: 20),
+                  listOfMovies(Colors.grey),
+                ],
+              ),
             ),
           ),
         ),

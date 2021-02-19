@@ -28,66 +28,70 @@ class _MoviePageState extends ModularState<MoviePage, MovieController> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: Observer(
-          builder: (_) {
-            if (controller.currentMovieFuture.status == FutureStatus.pending) {
-              return SkeletonMoviePage();
-            }
+      body: SafeArea(
+        child: Container(
+          height: size.height,
+          width: size.width,
+          child: Observer(
+            builder: (_) {
+              if (controller.currentMovieFuture.status ==
+                  FutureStatus.pending) {
+                return SkeletonMoviePage();
+              }
 
-            if (controller.currentMovieFuture.status == FutureStatus.rejected) {
-              return Center(
-                child: Icon(Icons.error_outline_outlined),
-              );
-            }
+              if (controller.currentMovieFuture.status ==
+                  FutureStatus.rejected) {
+                return Center(
+                  child: Icon(Icons.error_outline_outlined),
+                );
+              }
 
-            var movie = controller.currentMovieData;
-            return ListView(
-              children: <Widget>[
-                header(
-                  size,
-                  heroKey: widget.id,
-                  posterPath: widget.posterPath,
-                ),
-                SizedBox(height: 32),
-                rating(
-                  voteAverage: movie.voteAverage,
-                ),
-                title(
-                  title: movie.title,
-                  originalTitle: movie.originalTitle,
-                ),
-                Column(
-                  children: [
-                    yearDurationInformation(
-                      year: movie.releaseDate.substring(0, 4),
-                      duration: controller.convertTime(movie.runtime),
+              var movie = controller.currentMovieData;
+              return ListView(
+                children: <Widget>[
+                  header(
+                    size,
+                    heroKey: widget.id,
+                    posterPath: widget.posterPath,
+                  ),
+                  SizedBox(height: 32),
+                  rating(
+                    voteAverage: movie.voteAverage,
+                  ),
+                  title(
+                    title: movie.title,
+                    originalTitle: movie.originalTitle,
+                  ),
+                  Column(
+                    children: [
+                      yearDurationInformation(
+                        year: movie.releaseDate.substring(0, 4),
+                        duration: controller.convertTime(movie.runtime),
+                      ),
+                      SizedBox(height: 12),
+                      genres(context, listOfGenres: movie.genres),
+                    ],
+                  ),
+                  description(
+                    size,
+                    description: movie.overview,
+                    value: movie.budget.toString(),
+                    companies: controller.convertProductionCompanyModel(
+                      movie.productionCompanies,
                     ),
-                    SizedBox(height: 12),
-                    genres(context, listOfGenres: movie.genres),
-                  ],
-                ),
-                description(
-                  size,
-                  description: movie.overview,
-                  value: movie.budget.toString(),
-                  companies: controller.convertProductionCompanyModel(
-                    movie.productionCompanies,
                   ),
-                ),
-                team(
-                  cast: controller.convertCast(
-                    movie.creditsModel.cast,
+                  team(
+                    cast: controller.convertCast(
+                      movie.creditsModel.cast,
+                    ),
+                    crew: controller.convertDirector(
+                      movie.creditsModel.crew,
+                    ),
                   ),
-                  crew: controller.convertDirector(
-                    movie.creditsModel.crew,
-                  ),
-                ),
-              ],
-            );
-          },
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

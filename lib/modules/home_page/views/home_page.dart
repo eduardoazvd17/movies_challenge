@@ -44,156 +44,158 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: size.height,
-          width: size.width,
-          child: Observer(
-            builder: (_) {
-              if (controller.genreFuture.status == FutureStatus.rejected) {
-                return Center(
-                  child: RaisedButton.icon(
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    onPressed: controller.fetchGenres,
-                    icon: Icon(Icons.refresh),
-                    label: Text(
-                      'Oops! Ocorreu um erro, tente novamente',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            height: size.height,
+            width: size.width,
+            child: Observer(
+              builder: (_) {
+                if (controller.genreFuture.status == FutureStatus.rejected) {
+                  return Center(
+                    child: RaisedButton.icon(
+                      color: Theme.of(context).primaryColor,
+                      textColor: Colors.white,
+                      onPressed: controller.fetchGenres,
+                      icon: Icon(Icons.refresh),
+                      label: Text(
+                        'Oops! Ocorreu um erro, tente novamente',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                  ),
-                );
-              }
+                  );
+                }
 
-              if (controller.genreFuture.status == FutureStatus.pending) {
-                return Center(
-                  child: SkeletonHomePage(),
-                );
-              }
+                if (controller.genreFuture.status == FutureStatus.pending) {
+                  return Center(
+                    child: SkeletonHomePage(),
+                  );
+                }
 
-              return Stack(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 176),
-                    child: Observer(
-                      builder: (_) {
-                        if (controller.movieFuture.status ==
-                            FutureStatus.rejected) {
-                          return Center(
-                            child: RaisedButton.icon(
-                              color: Theme.of(context).primaryColor,
-                              textColor: Colors.white,
-                              onPressed: controller.loadNewPage,
-                              icon: Icon(Icons.refresh),
-                              label: Text(
-                                'Oops! Ocorreu um erro, tente novamente',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-
-                        if (controller.movieList.length == 0) {
-                          return Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-
-                        return ListView.separated(
-                          controller: _scrollController,
-                          padding: EdgeInsets.only(top: 66, bottom: 57),
-                          itemCount: controller.filteredItems.length + 1,
-                          separatorBuilder: (context, index) => SizedBox(
-                            height: 16,
-                          ),
-                          itemBuilder: (context, index) {
-                            if (index == controller.filteredItems.length &&
-                                index > 0) {
-                              return Center(
-                                child: Container(
-                                  height: 80,
-                                  width: 80,
-                                  alignment: Alignment.center,
-                                  child: Opacity(
-                                    opacity:
-                                        controller.searchByInputingText.isEmpty
-                                            ? 1.0
-                                            : 0.0,
-                                    child: CircularProgressIndicator(),
-                                  ),
-                                ),
-                              );
-                            } else if (index ==
-                                    controller.filteredItems.length &&
-                                index == 0) {
-                              return Center(
-                                child: Text(
-                                  'Nenhum item encontrado!',
+                return Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 176),
+                      child: Observer(
+                        builder: (_) {
+                          if (controller.movieFuture.status ==
+                              FutureStatus.rejected) {
+                            return Center(
+                              child: RaisedButton.icon(
+                                color: Theme.of(context).primaryColor,
+                                textColor: Colors.white,
+                                onPressed: controller.loadNewPage,
+                                icon: Icon(Icons.refresh),
+                                label: Text(
+                                  'Oops! Ocorreu um erro, tente novamente',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 14,
                                   ),
                                 ),
-                              );
-                            } else {
-                              var movie = controller.filteredItems[index];
-                              return InkWell(
-                                onTap: () {
-                                  Modular.to.pushNamed(
-                                    '/movie_page/${movie.id}',
-                                    arguments: movie.posterPath,
-                                  );
-                                },
-                                child: Hero(
-                                  tag: movie.id.toString(),
-                                  child: movieItem(
-                                    size,
-                                    title: movie.title,
-                                    genres: controller.getGenresFromMovies(
-                                      movie.genreIds,
+                              ),
+                            );
+                          }
+
+                          if (controller.movieList.length == 0) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+
+                          return ListView.separated(
+                            controller: _scrollController,
+                            padding: EdgeInsets.only(top: 66, bottom: 57),
+                            itemCount: controller.filteredItems.length + 1,
+                            separatorBuilder: (context, index) => SizedBox(
+                              height: 16,
+                            ),
+                            itemBuilder: (context, index) {
+                              if (index == controller.filteredItems.length &&
+                                  index > 0) {
+                                return Center(
+                                  child: Container(
+                                    height: 80,
+                                    width: 80,
+                                    alignment: Alignment.center,
+                                    child: Opacity(
+                                      opacity: controller
+                                              .searchByInputingText.isEmpty
+                                          ? 1.0
+                                          : 0.0,
+                                      child: CircularProgressIndicator(),
                                     ),
-                                    image: movie.posterPath,
                                   ),
-                                ),
-                              );
-                            }
-                          },
-                        );
-                      },
+                                );
+                              } else if (index ==
+                                      controller.filteredItems.length &&
+                                  index == 0) {
+                                return Center(
+                                  child: Text(
+                                    'Nenhum item encontrado!',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                );
+                              } else {
+                                var movie = controller.filteredItems[index];
+                                return InkWell(
+                                  onTap: () {
+                                    Modular.to.pushNamed(
+                                      '/movie_page/${movie.id}',
+                                      arguments: movie.posterPath,
+                                    );
+                                  },
+                                  child: Hero(
+                                    tag: movie.id.toString(),
+                                    child: movieItem(
+                                      size,
+                                      title: movie.title,
+                                      genres: controller.getGenresFromMovies(
+                                        movie.genreIds,
+                                      ),
+                                      image: movie.posterPath,
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    top: 0,
-                    child: Container(
-                      height: 245,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          stops: [0.69, 1],
-                          colors: [
-                            Color.fromRGBO(255, 255, 255, 1),
-                            Color.fromRGBO(255, 255, 255, 0),
+                    Positioned(
+                      top: 0,
+                      child: Container(
+                        height: 245,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.69, 1],
+                            colors: [
+                              Color.fromRGBO(255, 255, 255, 1),
+                              Color.fromRGBO(255, 255, 255, 0),
+                            ],
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            appBar(widget.title),
+                            searchFilms(size),
+                            listOfCategories(size),
                           ],
                         ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          appBar(widget.title),
-                          searchFilms(size),
-                          listOfCategories(size),
-                        ],
-                      ),
                     ),
-                  ),
-                ],
-              );
-            },
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),
