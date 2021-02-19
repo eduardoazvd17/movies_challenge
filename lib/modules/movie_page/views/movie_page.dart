@@ -33,14 +33,14 @@ class _MoviePageState extends ModularState<MoviePage, MovieController> {
         width: size.width,
         child: Observer(
           builder: (_) {
+            if (controller.currentMovieFuture.status == FutureStatus.pending) {
+              return SkeletonMoviePage();
+            }
+
             if (controller.currentMovieFuture.status == FutureStatus.rejected) {
               return Center(
                 child: Icon(Icons.error_outline_outlined),
               );
-            }
-
-            if (controller.currentMovieFuture.status == FutureStatus.pending) {
-              return SkeletonMoviePage();
             }
 
             var movie = controller.currentMovieData;

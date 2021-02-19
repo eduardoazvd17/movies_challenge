@@ -34,7 +34,7 @@ abstract class _MovieControllerBase with Store {
     id = currentId;
     currentMovieFuture = _moviesRepository
         .getMovieData(
-          id: id,
+          id: currentId,
         )
         .asObservable();
 

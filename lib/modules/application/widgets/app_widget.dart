@@ -7,16 +7,17 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
-      statusBarColor: Colors.transparent, // status bar color
+      statusBarColor: Colors.transparent,
     ));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: Modular.navigatorKey,
-      title: 'Flutter Slidy',
+      title: 'MoviesChalenge',
       theme: ThemeData(
         fontFamily: 'Montserrat',
-        primaryColor: Color.fromRGBO(0, 56, 76, 1),
+        primarySwatch: Colors.blueGrey,
+        primaryColor: Color.fromRGBO(0, 50, 70, 1),
       ),
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
