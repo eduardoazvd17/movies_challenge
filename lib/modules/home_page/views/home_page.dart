@@ -144,7 +144,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                               return InkWell(
                                 onTap: () {
                                   Modular.to.pushNamed(
-                                    '/movie/${movie.id}',
+                                    '/movie_page/${movie.id}',
                                     arguments: movie.posterPath,
                                   );
                                 },

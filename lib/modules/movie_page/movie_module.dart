@@ -2,7 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:the_movie_challenge/modules/application/repositories/movies_repository.dart';
 import 'package:the_movie_challenge/modules/movie_page/views/movie_page.dart';
 
-import '../controllers/movie_controller.dart';
+import 'controllers/movie_controller.dart';
 
 class MovieModule extends ChildModule {
   @override
