@@ -1,4 +1,4 @@
-# Movies Chalenge
+# Movies Challenge
 
 Movies info application using rest api, a challenge proposed by Cubos.
 
